@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+  <title>Er fössari?</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Er fössari?" />
+  <meta property="og:url" content="http://www.fossari.is" />
+  <meta property="og:image" content="http://www.fossari.is/img/fossari.png" />
+  <meta property="fb:admins" content="604525860" />
+</head>
+<body>
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <div id="wrapper" style="display: none">
+    <div id="IsItFriday"></div>
+    <div class="fb-like" data-href="http://fossari.is" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+    <div id="github">
+      <a href="https://github.com/gaui/fossari.is">
+        <img src="img/github.png" alt="GitHub" />
+      </a>
+    </div>
+  </div>
+  <script src="vendor.js?v1"></script>
+  <script src="app.js?v1"></script>
+</body>
+</html>

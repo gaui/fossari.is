@@ -1,0 +1,32 @@
+{
+  "name": "fossari.is",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "dependencies": {
+    "react": "^0.14.5"
+  },
+  "devDependencies": {
+    "babel-core": "^6.3.26",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "css-loader": "^0.23.1",
+    "file-loader": "^0.8.5",
+    "less": "^2.5.3",
+    "less-loader": "^2.2.2",
+    "react-dom": "^0.14.5",
+    "react-hot-loader": "^1.3.0",
+    "style-loader": "^0.13.0",
+    "webpack": "^1.12.11",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "scripts": {
+    "start": "SET NODE_ENV=test && webpack-dev-server --hot --inline --progress --colors --content-base src",
+    "dev": "SET NODE_ENV=test && webpack-dev-server --hot --inline --progress --colors --content-base src",
+    "build:test": "SET NODE_ENV=test && rm -rf dist && webpack && cp -r src/{index.html,favicon.ico,img/} dist/",
+    "build:prod": "SET NODE_ENV=live && rm -rf dist && webpack -p --devtool source-map && cp -r src/{index.html,favicon.ico,img/} dist/"
+  },
+  "author": "Gudjon Jonsson",
+  "license": "ISC"
+}

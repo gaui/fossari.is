@@ -1,0 +1,66 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+
+html, body {
+  height: 100%;
+  font-family: 'Montserrat';
+  background-color: #f1f1f1;
+}
+
+body {
+  margin: 0;
+}
+
+#wrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.fb-like {
+  margin-top: 30px;
+}
+
+#github {
+  margin-top: 30px;
+
+  img {
+    opacity: 0.2;
+  }
+}
+
+#IsItFriday {
+  font-size: 4em;
+  text-align: center;
+
+  div {
+    margin: 20px;
+
+    &.yes {
+      font-size: 2em;
+      color: green;
+      -webkit-animation-name: 'pulse';
+      -webkit-animation-duration: 500ms;
+      -webkit-transform-origin:50% 50%;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-timing-function: linear;
+    }
+
+    &.no {
+      font-size: 2em;
+      color: red;
+    }
+  }
+
+  @-webkit-keyframes pulse {
+    0% { -webkit-transform: scale(1); }
+    30% { -webkit-transform: scale(1.5); }
+    40% { -webkit-transform: scale(1.18); }
+    50% { -webkit-transform: scale(1); }
+    60% { -webkit-transform: scale(1); }
+    70% { -webkit-transform: scale(1.15); }
+    80% { -webkit-transform: scale(1); }
+    100% { -webkit-transform: scale(1); }
+  }
+}
