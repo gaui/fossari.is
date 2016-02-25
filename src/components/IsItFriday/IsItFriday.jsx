@@ -4,11 +4,26 @@ export default class IsItFriday extends React.Component {
   constructor(props) {
     super(props);
 
-    let self = this;
-    self.state = {
-      text: props.friday ? 'já' : 'nei',
-      class: props.friday ? 'yes' : 'no',
+    this.map = {
+      true: {
+        text: 'já',
+        class: 'yes'
+      },
+      false: {
+        text: 'nei',
+        class: 'no'
+      }
     };
+
+    this.state = this.getNextState();
+  }
+
+  componentWillReceiveProps() {
+    this.setState(this.getNextState());
+  }
+
+  getNextState() {
+    return this.map[this.props.friday];
   }
 
   render() {

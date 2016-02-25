@@ -4,6 +4,7 @@
   "description": "",
   "main": "src/app.js",
   "dependencies": {
+    "moment": "^2.11.2",
     "react": "^0.14.5"
   },
   "devDependencies": {

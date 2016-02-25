@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import IsItFriday from './components/IsItFriday/IsItFriday';
+import Countdown from './components/Countdown/Countdown';
 require('./app.less');
 
 // Hide everything until DOM has been loaded
@@ -46,7 +47,7 @@ class App extends React.Component {
     return (
       <div>
         <IsItFriday friday={this.state.friday} />
-        <Countdown friday={this.state.friday} />
+        {!this.state.friday ? <Countdown /> : null}
       </div>
     )
   }
