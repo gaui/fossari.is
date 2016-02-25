@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import IsItFriday from './js/IsItFriday';
+import IsItFriday from './components/IsItFriday/IsItFriday';
 require('./app.less');
 
 // Hide everything until DOM has been loaded
