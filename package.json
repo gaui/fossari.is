@@ -1,9 +1,10 @@
 {
   "name": "fossari.is",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
   "main": "src/app.js",
   "dependencies": {
+    "moment": "^2.11.2",
     "react": "^0.14.5"
   },
   "devDependencies": {
