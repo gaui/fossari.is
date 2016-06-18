@@ -1,32 +1,31 @@
 @import url(http://fonts.googleapis.com/css?family=Montserrat);
 
 html, body {
-  height: 100%;
+  margin-top: 20px;
   font-family: 'Montserrat';
   background-color: #f1f1f1;
 }
 
-body {
-  margin: 0;
-}
-
 #wrapper {
-  height: 100%;
+  font-size: 3vw;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-}
 
-.fb-like {
-  margin-top: 30px;
-}
+  #github {
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+    img {
+      opacity: 0.2;
+    }
+  }
 
-#github {
-  margin-top: 30px;
-
-  img {
-    opacity: 0.2;
+  .fb-like {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
   }
 }
 
