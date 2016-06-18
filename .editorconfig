@@ -1,5 +1,5 @@
 root = true
 
-[*.{js,json,html,css,less}]
+[*.{js,jsx,ts,tsx,json,html,css,less}]
 indent_style = space
 indent_size = 2
