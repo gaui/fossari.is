@@ -6,11 +6,6 @@ import Countdown from './components/Countdown/Countdown';
 
 import './app.less';
 
-// Hide everything until DOM has been loaded
-document.addEventListener('DOMContentLoaded', function(event) {
-    document.getElementById('wrapper').style.display = 'flex';
-});
-
 interface AppState {
   friday : boolean
 }
