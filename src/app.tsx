@@ -1,17 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+
 import IsItFriday from './components/IsItFriday/IsItFriday';
 import Countdown from './components/Countdown/Countdown';
-require('./app.less');
+
+import './app.less';
 
 // Hide everything until DOM has been loaded
 document.addEventListener('DOMContentLoaded', function(event) {
     document.getElementById('wrapper').style.display = 'flex';
 });
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
+interface AppState {
+  friday : boolean
+}
+
+class App extends React.Component<{}, AppState> {
+  private interval : number;
+
+  constructor() {
+      super();
 
     let self = this;
     self.state = this.getNextState();
@@ -22,14 +30,7 @@ class App extends React.Component {
     }, 1000);
   }
 
-  componentWillUnmount() {
-    if(this.interval) {
-      clearInterval(this.interval);
-      this.interval = null;
-    }
-  }
-
-  getNextState() {
+  getNextState() : AppState {
     const date = new Date();
     const isFriday = date.getDay() === 5 ||
       (date.getDay() === 6 && date.getHours() <= 5);
@@ -41,6 +42,13 @@ class App extends React.Component {
 
   updateState() {
     this.setState(this.getNextState());
+  }
+
+  componentWillUnmount() {
+    if(this.interval) {
+      clearInterval(this.interval);
+      this.interval = null;
+    }
   }
 
   render() {

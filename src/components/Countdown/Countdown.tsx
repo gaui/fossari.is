@@ -1,9 +1,16 @@
-import React from 'react';
-import moment from 'moment';
+import * as React from 'react';
+import * as moment from 'moment';
 
-export default class Countdown extends React.Component {
-  constructor(props) {
-    super(props);
+interface CountdownState {
+  days : number,
+  hours : number,
+  minutes : number,
+  seconds : number
+};
+
+export default class Countdown extends React.Component<{}, CountdownState> {
+  constructor() {
+    super();
     moment.locale('is');
 
     this.state = this.getMoment();
