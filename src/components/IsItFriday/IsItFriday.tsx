@@ -16,10 +16,6 @@ export default class IsItFriday extends React.Component<IsItFridayProps, IsItFri
     this.state = this.getNextState();
   }
 
-  componentWillReceiveProps() {
-    this.setState(this.getNextState());
-  }
-
   getNextState(): IsItFridayState {
     let map = {
       yes: {
@@ -33,6 +29,10 @@ export default class IsItFriday extends React.Component<IsItFridayProps, IsItFri
     };
 
     return this.props.friday ? map['yes'] : map['no'];
+  }
+
+  componentWillReceiveProps() {
+    this.setState(this.getNextState());
   }
 
   render() {

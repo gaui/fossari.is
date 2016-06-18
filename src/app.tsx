@@ -30,13 +30,6 @@ class App extends React.Component<{}, AppState> {
     }, 1000);
   }
 
-  componentWillUnmount() {
-    if(this.interval) {
-      clearInterval(this.interval);
-      this.interval = null;
-    }
-  }
-
   getNextState() : AppState {
     const date = new Date();
     const isFriday = date.getDay() === 5 ||
@@ -49,6 +42,13 @@ class App extends React.Component<{}, AppState> {
 
   updateState() {
     this.setState(this.getNextState());
+  }
+
+  componentWillUnmount() {
+    if(this.interval) {
+      clearInterval(this.interval);
+      this.interval = null;
+    }
   }
 
   render() {
