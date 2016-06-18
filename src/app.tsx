@@ -37,7 +37,7 @@ class App extends React.Component<{}, AppState> {
     }
   }
 
-  getNextState() {
+  getNextState() : AppState {
     const date = new Date();
     const isFriday = date.getDay() === 5 ||
       (date.getDay() === 6 && date.getHours() <= 5);
