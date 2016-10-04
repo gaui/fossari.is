@@ -36,11 +36,22 @@ export default class IsItFriday extends React.Component<IsItFridayProps, IsItFri
   }
 
   render() {
+    const dayOfWeek : number = new Date().getDay();
+    const opacity : number = Math.abs((5 - dayOfWeek) / 4);
+
+    const styles = {
+      opacity: this.props.friday ? 1 : opacity
+    };
+
     return (
       <div id="IsItFriday">
         <div>Er fössari?</div>
-        <div className={this.state.cssClass}>{this.state.text}</div>
-      </div>
+        <div
+          style={styles}
+          className={this.state.cssClass}
+          title={opacity*100+'%'}>
+          {this.state.text}</div>
+        </div>
     )
   }
 }
