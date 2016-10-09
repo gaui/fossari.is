@@ -1,24 +1,25 @@
 {
   "name": "fossari.is",
-  "version": "3.1.1",
+  "version": "3.2.0",
   "description": "",
   "main": "src/app.tsx",
   "dependencies": {
-    "moment": "^2.11.2",
-    "react": "^15.1.0",
-    "react-dom": "^15.1.0"
+    "moment": "^2.15.1",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
   },
   "devDependencies": {
     "css-loader": "^0.23.1",
     "file-loader": "^0.8.5",
-    "less": "^2.5.3",
-    "less-loader": "^2.2.2",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
     "react-hot-loader": "^1.3.0",
     "source-map-loader": "^0.1.5",
-    "style-loader": "^0.13.0",
-    "ts-loader": "^0.8.2",
-    "webpack": "^1.13.1",
-    "webpack-dev-server": "^1.14.1"
+    "style-loader": "^0.13.1",
+    "ts-loader": "^0.9.0",
+    "typescript": "^2.0.3",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.2"
   },
   "scripts": {
     "start": "SET NODE_ENV=test && webpack-dev-server --hot --inline --progress --colors --content-base src",
