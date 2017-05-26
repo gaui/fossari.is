@@ -28,7 +28,7 @@
   "scripts": {
     "dev": "SET NODE_ENV=test && webpack-dev-server --history-api-fallback --hot --inline --progress --colors --content-base src",
     "build:test": "SET NODE_ENV=test && webpack",
-    "build:prod": "SET NODE_ENV=live && webpack -p --devtool source-map"
+    "build:prod": "SET NODE_ENV=production && webpack -p --devtool source-map"
   },
   "author": "Gudjon Jonsson",
   "license": "ISC"

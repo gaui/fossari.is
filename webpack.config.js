@@ -30,7 +30,6 @@ module.exports = {
     extensions: ['.js', '.ts', '.tsx']
   },
   plugins: [
-    new webpack.EnvironmentPlugin(['NODE_ENV']),
     new webpack.optimize.CommonsChunkPlugin({ name: 'vendors' }),
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en-gb|is/),
     gitRevisionPlugin,
