@@ -2,6 +2,7 @@ var webpack = require('webpack');
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 var GitRevisionPlugin = require('git-revision-webpack-plugin');
 
 var gitRevisionPluginOpt = {
@@ -39,6 +40,9 @@ module.exports = {
       gitCommitHash: gitRevisionPlugin.commithash(),
       gitCommitVersion: gitRevisionPlugin.version()
     }),
+    new CopyWebpackPlugin([
+      { from: './src/img/', to: 'img/' }
+    ]),
     new CleanWebpackPlugin(['dist'])
   ]
 };
