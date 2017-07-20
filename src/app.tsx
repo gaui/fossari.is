@@ -1,34 +1,28 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-
 import IsItFriday from './components/IsItFriday/IsItFriday';
 import Countdown from './components/Countdown/Countdown';
-
 import './app.less';
 
-interface AppState {
-  friday : boolean
-}
-
 class App extends React.Component<{}, AppState> {
-  private interval : number;
+  private interval: number;
 
   constructor() {
-      super();
+    super();
 
-    let self = this;
+    const self = this;
     self.state = this.getNextState();
 
     // Set interval to update state every minute
-    self.interval = setInterval(function() {
+    self.interval = setInterval(() => {
       self.updateState();
     }, 1000);
   }
 
-  getNextState() : AppState {
+  getNextState(): AppState {
     const date = new Date();
-    const isFriday = date.getDay() === 5 ||
-      (date.getDay() === 6 && date.getHours() <= 5);
+    const isFriday =
+      date.getDay() === 5 || (date.getDay() === 6 && date.getHours() <= 5);
 
     return {
       friday: isFriday
@@ -40,7 +34,7 @@ class App extends React.Component<{}, AppState> {
   }
 
   componentWillUnmount() {
-    if(this.interval) {
+    if (this.interval) {
       clearInterval(this.interval);
       this.interval = null;
     }
@@ -52,7 +46,7 @@ class App extends React.Component<{}, AppState> {
         <IsItFriday friday={this.state.friday} />
         {!this.state.friday ? <Countdown /> : null}
       </div>
-    )
+    );
   }
 }
 

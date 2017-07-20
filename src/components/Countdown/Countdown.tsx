@@ -1,13 +1,6 @@
 import * as React from 'react';
 import * as moment from 'moment';
 
-interface CountdownState {
-  days : number,
-  hours : number,
-  minutes : number,
-  seconds : number
-};
-
 export default class Countdown extends React.Component<{}, CountdownState> {
   constructor() {
     super();
@@ -17,8 +10,11 @@ export default class Countdown extends React.Component<{}, CountdownState> {
   }
 
   getMoment() {
-    let nextFriday = moment().day() > 5 ? moment().endOf('week').add(1, 'day').day(5).startOf('day') : moment().day(5).startOf('day');
-    let diff = moment.duration(nextFriday.diff(moment()));
+    const nextFriday =
+      moment().day() > 5
+        ? moment().endOf('week').add(1, 'day').day(5).startOf('day')
+        : moment().day(5).startOf('day');
+    const diff = moment.duration(nextFriday.diff(moment()));
 
     return {
       days: diff.days(),
@@ -35,8 +31,11 @@ export default class Countdown extends React.Component<{}, CountdownState> {
   render() {
     return (
       <div id="Countdown">
-        <div>{this.state.days} dagar, {this.state.hours} klst, {this.state.minutes} mín, {this.state.seconds} sek.</div>
+        <div>
+          {this.state.days} dagar, {this.state.hours} klst, {this.state.minutes}{' '}
+          mín, {this.state.seconds} sek.
+        </div>
       </div>
-    )
+    );
   }
 }
