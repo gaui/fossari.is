@@ -6,10 +6,6 @@ import Countdown from './components/Countdown/Countdown';
 
 import './app.less';
 
-interface AppState {
-  friday : boolean
-}
-
 class App extends React.Component<{}, AppState> {
   private interval : number;
 
