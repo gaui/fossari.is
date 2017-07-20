@@ -1,6 +1,6 @@
 {
   "name": "fossari.is",
-  "version": "3.3.3",
+  "version": "3.4.0",
   "description": "",
   "main": "src/app.tsx",
   "dependencies": {
