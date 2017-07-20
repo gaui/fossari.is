@@ -1,23 +1,17 @@
 import * as React from 'react';
 
-interface IsItFridayProps {
-  friday : boolean
-}
-
-interface IsItFridayState {
-  text : string,
-  cssClass : string
-}
-
-export default class IsItFriday extends React.Component<IsItFridayProps, IsItFridayState> {
-  constructor(props : IsItFridayProps) {
+export default class IsItFriday extends React.Component<
+  IsItFridayProps,
+  IsItFridayState
+> {
+  constructor(props: IsItFridayProps) {
     super(props);
 
     this.state = this.getNextState();
   }
 
   getNextState(): IsItFridayState {
-    let map = {
+    const map = {
       yes: {
         text: 'já',
         cssClass: 'yes'
@@ -36,8 +30,8 @@ export default class IsItFriday extends React.Component<IsItFridayProps, IsItFri
   }
 
   render() {
-    const dayOfWeek : number = new Date().getDay();
-    const opacity : number = Math.abs((5 - dayOfWeek) / 4);
+    const dayOfWeek: number = new Date().getDay();
+    const opacity: number = Math.abs((5 - dayOfWeek) / 4);
 
     const styles = {
       opacity: this.props.friday ? 1 : opacity
@@ -49,9 +43,11 @@ export default class IsItFriday extends React.Component<IsItFridayProps, IsItFri
         <div
           style={styles}
           className={this.state.cssClass}
-          title={opacity*100+'%'}>
-          {this.state.text}</div>
+          title={opacity * 100 + '%'}
+        >
+          {this.state.text}
         </div>
-    )
+      </div>
+    );
   }
 }

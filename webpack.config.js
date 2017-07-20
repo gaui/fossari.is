@@ -6,8 +6,8 @@ var CopyWebpackPlugin = require('copy-webpack-plugin');
 var GitRevisionPlugin = require('git-revision-webpack-plugin');
 
 var gitRevisionPluginOpt = {
-    versionCommand: 'describe --always --tags',
-    commithashCommand: 'rev-parse --short HEAD'
+  versionCommand: 'describe --always --tags',
+  commithashCommand: 'rev-parse --short HEAD'
 };
 var gitRevisionPlugin = new GitRevisionPlugin(gitRevisionPluginOpt);
 
@@ -23,8 +23,16 @@ module.exports = {
   module: {
     rules: [
       { test: /\.tsx?$/, loader: 'ts-loader', exclude: /node_modules/ },
-      { test: /\.less$/, loader: 'style-loader!css-loader!less-loader', exclude: /node_modules/ },
-      { test: /\.(png|jpg|woff|woff2|ttf|eot|svg)(\?]?.*)?$/, loader : 'file-loader', exclude: /node_modules/ }
+      {
+        test: /\.less$/,
+        loader: 'style-loader!css-loader!less-loader',
+        exclude: /node_modules/
+      },
+      {
+        test: /\.(png|jpg|woff|woff2|ttf|eot|svg)(\?]?.*)?$/,
+        loader: 'file-loader',
+        exclude: /node_modules/
+      }
     ]
   },
   resolve: {
