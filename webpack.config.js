@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var path = require('path');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -25,7 +26,10 @@ module.exports = {
       { test: /\.tsx?$/, loader: 'ts-loader', exclude: /node_modules/ },
       {
         test: /\.less$/,
-        loader: 'style-loader!css-loader!less-loader',
+        loader: ExtractTextPlugin.extract({
+            fallback: 'style-loader',
+            use: ['css-loader', 'postcss-loader', 'less-loader']
+        }),
         exclude: /node_modules/
       },
       {
@@ -41,6 +45,9 @@ module.exports = {
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({ name: 'vendors' }),
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en-gb|is/),
+    new ExtractTextPlugin({
+      filename: 'styles.[git-revision-hash].css'
+    }),
     gitRevisionPlugin,
     new HtmlWebpackPlugin({
       title: 'Fössari.is',

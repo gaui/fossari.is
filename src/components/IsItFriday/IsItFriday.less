@@ -8,11 +8,11 @@
     &.yes {
       font-size: 2em;
       color: green;
-      -webkit-animation-name: 'pulse';
-      -webkit-animation-duration: 500ms;
-      -webkit-transform-origin: 50% 50%;
-      -webkit-animation-iteration-count: infinite;
-      -webkit-animation-timing-function: linear;
+      animation-name: 'pulse';
+      animation-duration: 500ms;
+      transform-origin: 50% 50%;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
     }
 
     &.no {
@@ -21,30 +21,30 @@
     }
   }
 
-  @-webkit-keyframes pulse {
+  @keyframes pulse {
     0% {
-      -webkit-transform: scale(1);
+      transform: scale(1);
     }
     30% {
-      -webkit-transform: scale(1.5);
+      transform: scale(1.5);
     }
     40% {
-      -webkit-transform: scale(1.18);
+      transform: scale(1.18);
     }
     50% {
-      -webkit-transform: scale(1);
+      transform: scale(1);
     }
     60% {
-      -webkit-transform: scale(1);
+      transform: scale(1);
     }
     70% {
-      -webkit-transform: scale(1.15);
+      transform: scale(1.15);
     }
     80% {
-      -webkit-transform: scale(1);
+      transform: scale(1);
     }
     100% {
-      -webkit-transform: scale(1);
+      transform: scale(1);
     }
   }
 }
