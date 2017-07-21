@@ -25,7 +25,7 @@ module.exports = {
       { test: /\.tsx?$/, loader: 'ts-loader', exclude: /node_modules/ },
       {
         test: /\.less$/,
-        loader: 'style-loader!css-loader!less-loader',
+        loader: 'style-loader!css-loader?importLoaders=1!postcss-loader!less-loader',
         exclude: /node_modules/
       },
       {
