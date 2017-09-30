@@ -10,27 +10,30 @@ class App extends React.Component<{}, AppState> {
   constructor() {
     super();
 
-    const self = this;
-    self.state = this.getNextState();
+    this.state = {
+      loaded: false,
+      friday: this.isFriday()
+    };
 
     // Set interval to update state every minute
-    self.interval = setInterval(() => {
-      self.updateState();
+    this.interval = setInterval(() => {
+      this.updateState(true);
     }, 1000);
   }
 
-  getNextState(): AppState {
+  isFriday(): boolean {
     const date = new Date();
     const isFriday =
       date.getDay() === 5 || (date.getDay() === 6 && date.getHours() <= 5);
 
-    return {
-      friday: isFriday
-    };
+    return isFriday;
   }
 
-  updateState() {
-    this.setState(this.getNextState());
+  updateState(loaded : boolean) {
+    this.setState({
+      loaded,
+      friday: this.isFriday()
+    });
   }
 
   componentWillUnmount() {
@@ -40,7 +43,15 @@ class App extends React.Component<{}, AppState> {
     }
   }
 
+  getLoader = () => {
+    return <i className="fa fa-circle-o-notch fa-spin fa-2x fa-fw"></i>;
+  }
+
   render() {
+    if (!this.state.loaded) {
+      return this.getLoader();
+    }
+
     return (
       <div>
         <IsItFriday friday={this.state.friday} />
