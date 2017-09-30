@@ -30,8 +30,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|woff|woff2|ttf|eot|svg)(\?]?.*)?$/,
-        loader: 'file-loader',
-        exclude: /node_modules/
+        loader: 'file-loader'
       }
     ]
   },
