@@ -19,5 +19,5 @@ yarn run dev
 
 ```
 # Pull and run the image in detached mode and bind port 80
-docker run --name fossari -d -p 80:80 gaui/fossari-is
+docker run --name fossari -d -p 80:80 gaui/fossari.is
 ```
