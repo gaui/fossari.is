@@ -1,4 +1,5 @@
 interface AppState {
+  loaded : boolean;
   friday : boolean
 }
 
