@@ -15,7 +15,7 @@
     "git-revision-webpack-plugin": "^2.5.1",
     "html-webpack-plugin": "^2.29.0",
     "less-loader": "^4.0.5",
-    "moment": "^2.18.1",
+    "moment": "^2.22.2",
     "postcss-loader": "2.0.6",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
