@@ -9,7 +9,7 @@
     "autoprefixer": "^7.1.2",
     "clean-webpack-plugin": "^0.1.16",
     "copy-webpack-plugin": "^4.0.1",
-    "css-loader": "^0.28.4",
+    "css-loader": "^1.0.0",
     "file-loader": "^0.11.2",
     "font-awesome": "^4.7.0",
     "git-revision-webpack-plugin": "^2.5.1",
