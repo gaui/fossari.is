@@ -20,7 +20,7 @@
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "style-loader": "^0.18.2",
-    "ts-loader": "^2.3.1",
+    "ts-loader": "^5.1.0",
     "tslint-config-airbnb": "^5.2.1",
     "typescript": "^2.4.2",
     "webpack": "^3.3.0"
