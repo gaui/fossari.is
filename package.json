@@ -6,7 +6,7 @@
   "dependencies": {
     "@types/react": "^16.0.7",
     "@types/react-dom": "^15.5.5",
-    "autoprefixer": "^7.1.2",
+    "autoprefixer": "^9.1.5",
     "clean-webpack-plugin": "^0.1.16",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.4",
