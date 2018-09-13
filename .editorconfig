@@ -1,5 +1,6 @@
 root = true
 
-[*.{js,jsx,ts,tsx,json,html,css,less}]
+[*]
+end_of_line = crlf
 indent_style = space
 indent_size = 2

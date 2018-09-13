@@ -1,14 +1,6 @@
 {
-  "extends": "tslint-config-airbnb",
+  "extends": "tslint-config-prettier",
   "rules": {
-    "quotemark": [true, "single", "avoid-escape"],
-    "max-classes-per-file": [true, 2],
-    "ter-indent": ["error", 4, { "SwitchCase": 1 }],
-    "linebreak-style": [true, "CRLF"],
-    "no-var-self": false,
-    "align": [false, "parameters", "statements"],
-    "max-line-length": [true, 120],
-    "trailing-comma": [false],
-    "variable-name": [true, "ban-keywords", "check-format", "allow-pascal-case"]
+    "max-classes-per-file": [true, 2]
   }
 }
