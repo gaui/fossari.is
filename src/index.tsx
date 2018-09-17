@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { I18nextProvider } from 'react-i18next';
 import App from './components/App';
 import { i18nInstance } from './misc/i18n';
+import './misc/extra';
 
 class Entry extends React.Component {
   constructor(props: any) {
