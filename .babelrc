@@ -1,7 +1,7 @@
 {
   "plugins": ["babel-plugin-styled-components"],
   "presets": [
-    ["env", {
+    ["@babel/env", {
       "targets": "> 0.25%, not dead"
     }]
   ]
