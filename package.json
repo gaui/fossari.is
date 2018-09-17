@@ -30,7 +30,8 @@
     "tslint": "^5.11.0",
     "tslint-config-prettier": "^1.15.0",
     "typescript": "^3.0.3",
-    "why-did-you-update": "^0.1.1"
+    "why-did-you-update": "^0.1.1",
+    "less": "^3.8.1"
   },
   "scripts": {
     "start": "parcel ./src/index.html --no-source-maps",
@@ -47,8 +48,5 @@
   },
   "docker": {
     "registry": "gaui/fossari.is"
-  },
-  "devDependencies": {
-    "less": "^3.8.1"
   }
 }
