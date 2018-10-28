@@ -6,7 +6,7 @@ WORKDIR /tmp
 
 ENV NODE_ENV=production
 
-RUN yarn
+RUN yarn --prod=false
 RUN yarn run build
 
 FROM node:${NODE_VERSION} AS runtime
