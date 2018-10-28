@@ -9,7 +9,7 @@ import {
   addWeeks,
   endOfISOWeek,
   subDays
-} from 'date-fns/esm';
+} from 'date-fns';
 
 function getNextWeekDay(date: Date, weekDay: number) {
   const last = subDays(endOfISOWeek(date), 7 - weekDay);
