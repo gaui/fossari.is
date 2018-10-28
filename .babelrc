@@ -1,8 +1,11 @@
 {
-  "plugins": ["babel-plugin-styled-components"],
+  "plugins": ["babel-plugin-styled-components",
+    "@babel/proposal-class-properties"
+  ],
   "presets": [
-    ["@babel/env", {
-      "targets": "> 0.25%, not dead"
+    "@babel/typescript", "@babel/react", ["@babel/env", {
+      "targets": "> 0.25%, not dead",
+      "loose": true
     }]
   ]
 }
