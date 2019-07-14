@@ -15,8 +15,7 @@
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "react-i18next": "^8.3.3",
-    "styled-components": "^4.3.2",
-    "why-did-you-update": "^0.1.1"
+    "styled-components": "^4.3.2"
   },
   "scripts": {
     "start": "parcel ./src/index.html --no-source-maps",
