@@ -59,7 +59,7 @@
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-prettier": "^3.1.0",
     "parcel-bundler": "^1.12.3",
-    "postcss-preset-env": "^6.2.0",
+    "postcss-preset-env": "^6.7.0",
     "prettier": "^1.18.2",
     "typescript": "^3.5.3"
   }
