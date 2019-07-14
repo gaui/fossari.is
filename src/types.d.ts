@@ -26,9 +26,10 @@ interface CountdownTimeState {
   seconds: string;
 }
 
+interface StyledComponentsHelperProps {
+  [key: string]: unknown;
+}
+
 declare module '*.css';
 declare module 'nprogress';
-declare module 'react-i18next';
-declare module 'i18next';
-declare module 'i18next-browser-languagedetector';
 declare module 'styled-components';

@@ -1,15 +1,17 @@
 class StyledComponentsHelper {
-  private defaults: any;
+  private defaults: StyledComponentsHelperProps;
 
-  constructor(defaults: any) {
+  public constructor(defaults: StyledComponentsHelperProps) {
     this.defaults = defaults;
   }
 
-  public getPropObject = (extraProps?: string[]) => {
-    const clone: any = Object.assign({}, this.defaults);
-    const empty: any = {};
+  public getPropObject = (props: {
+    [key: string]: string;
+  }): StyledComponentsHelperProps => {
+    const clone: StyledComponentsHelperProps = Object.assign({}, this.defaults);
+    const empty: StyledComponentsHelperProps = {};
     for (const [k] of Object.entries(clone)) {
-      empty[k] = (p: any) => p[k] || clone[k];
+      empty[k] = props[k] || clone[k];
     }
 
     return empty;

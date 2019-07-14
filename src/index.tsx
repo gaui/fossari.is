@@ -19,10 +19,4 @@ class Entry extends React.Component {
   }
 }
 
-const WDYU = false;
-if (WDYU && process.env.NODE_ENV !== 'production') {
-  const { whyDidYouUpdate } = require('why-did-you-update');
-  whyDidYouUpdate(React);
-}
-
 ReactDOM.render(<Entry />, document.getElementById('App'));

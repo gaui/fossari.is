@@ -1,12 +1,11 @@
 import React from 'react';
 import NProgress from 'nprogress';
-import { translate } from 'react-i18next';
+import { withTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import { getNextWeekDay, isFriday } from '../misc/date';
 import AnimatedText from './AnimatedText';
 import Countdown from './Countdown';
 
-@translate()
 class IsItFriday extends React.Component<any, IsItFridayState> {
   state = {
     loaded: false,
@@ -15,7 +14,7 @@ class IsItFriday extends React.Component<any, IsItFridayState> {
     nextFriday: getNextWeekDay(new Date(), 5)
   };
 
-  private interval: NodeJS.Timer | null;
+  private interval: number | null;
 
   constructor(props: any) {
     super(props);
@@ -81,7 +80,7 @@ class IsItFriday extends React.Component<any, IsItFridayState> {
 
   render() {
     const { loaded, isFriday, currentDate, nextFriday } = this.state;
-    const { t } = this.props;
+    const t = this.props.t;
 
     const isItFriday = isFriday && (window as any).friday !== false;
     const details = this.displayDetails(isItFriday);
@@ -135,4 +134,4 @@ class IsItFriday extends React.Component<any, IsItFridayState> {
   }
 }
 
-export default IsItFriday;
+export default withTranslation()(IsItFriday);

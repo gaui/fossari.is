@@ -14,18 +14,18 @@ const propHelper = new StyledComponentsHelper({
   playstate: 'running'
 });
 
-const animatedTextAttributes = propHelper.getPropObject(['animationname']);
-
-const AnimatedText = styled.div.attrs(animatedTextAttributes)`
+const AnimatedText = styled.div.attrs(
+  (props: { [key: string]: string }): StyledComponentsHelperProps => ({
+    ...propHelper.getPropObject(props)
+  })
+)`
   color: ${(props: any) => props.color};
   font-size: ${(props: any) => props.size};
   animation: ${(props: any) => createAnimationString(props)};
 `;
 
 function createAnimationString(props: any) {
-  const animationDetails = `${props.duration} ${props.timingfunction} ${
-    props.delay
-  } ${props.iterationcount} ${props.direction} ${props.fillmode}`;
+  const animationDetails = `${props.duration} ${props.timingfunction} ${props.delay} ${props.iterationcount} ${props.direction} ${props.fillmode}`;
 
   return css`
     ${keyframes[props.animationname]} ${animationDetails};
