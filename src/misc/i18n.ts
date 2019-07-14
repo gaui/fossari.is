@@ -1,5 +1,5 @@
 import i18n from 'i18next';
-import { reactI18nextModule } from 'react-i18next';
+import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
 const flagCodeMap = {
@@ -35,15 +35,15 @@ const resources = {
   }
 };
 
-const instance = i18n
+i18n
   .use(LanguageDetector)
-  .use(reactI18nextModule)
+  .use(initReactI18next)
   .init({
     resources,
     fallbackLng: 'is',
     debug: false,
     react: {
-      wait: false,
+      useSuspense: false,
       bindI18n: 'languageChanged loaded',
       bindStore: 'added removed',
       nsMode: 'default'
@@ -54,4 +54,4 @@ function mapCountryCode(countryCode: string) {
   return flagCodeMap[countryCode];
 }
 
-export { instance as i18nInstance, mapCountryCode };
+export { i18n as i18nInstance, mapCountryCode };

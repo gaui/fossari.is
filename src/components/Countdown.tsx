@@ -1,10 +1,9 @@
 import React, { Fragment } from 'react';
-import { translate } from 'react-i18next';
+import { withTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import { getDifference } from '../misc/date';
 import AnimatedText from './AnimatedText';
 
-@translate()
 class Countdown extends React.Component<CountdownProps, CountdownState> {
   state = {
     loaded: false,
@@ -68,4 +67,4 @@ class Countdown extends React.Component<CountdownProps, CountdownState> {
   }
 }
 
-export default Countdown;
+export default withTranslation()(Countdown);

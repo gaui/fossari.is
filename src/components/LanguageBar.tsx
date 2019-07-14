@@ -1,10 +1,9 @@
 import 'flag-icon-css/css/flag-icon.min.css';
 import React from 'react';
-import { translate } from 'react-i18next';
 import styled from 'styled-components';
 import { mapCountryCode } from '../misc/i18n';
+import { withTranslation } from 'react-i18next';
 
-@translate()
 class LanguageBar extends React.Component {
   private i18n: any;
 
@@ -48,4 +47,4 @@ class LanguageBar extends React.Component {
   }
 }
 
-export default LanguageBar;
+export default withTranslation()(LanguageBar);

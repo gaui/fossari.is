@@ -28,7 +28,4 @@ interface CountdownTimeState {
 
 declare module '*.css';
 declare module 'nprogress';
-declare module 'react-i18next';
-declare module 'i18next';
-declare module 'i18next-browser-languagedetector';
 declare module 'styled-components';
