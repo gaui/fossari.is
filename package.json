@@ -27,6 +27,7 @@
     "lint": "eslint --ext .ts src",
     "format": "prettier \"./{src,__tests__,examples}/**/*.{js,jsx,ts,tsx,json,md}\" --write",
     "typecheck": "tsc --noEmit --pretty --skipLibCheck",
+    "vuln": "yarn audit --level high --no-progress --non-interactive --frozen-lockfile",
     "docker:build": "sh -c 'docker build . -t $npm_package_docker_registry:$npm_package_version'",
     "docker:push": "sh -c 'docker push $npm_package_docker_registry:$npm_package_version'"
   },
