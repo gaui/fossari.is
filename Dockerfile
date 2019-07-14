@@ -1,5 +1,5 @@
-ARG NODE_VERSION=10.9
-FROM node:${NODE_VERSION} AS build
+ARG NODE_VERSION=12.4
+FROM node:${NODE_VERSION}-slim AS build
 
 COPY . /tmp
 WORKDIR /tmp
