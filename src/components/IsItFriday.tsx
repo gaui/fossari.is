@@ -15,7 +15,7 @@ class IsItFriday extends React.Component<any, IsItFridayState> {
     nextFriday: getNextWeekDay(new Date(), 5)
   };
 
-  private interval: NodeJS.Timer | null;
+  private interval: number | null;
 
   constructor(props: any) {
     super(props);

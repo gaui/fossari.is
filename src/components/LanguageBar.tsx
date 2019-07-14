@@ -13,14 +13,13 @@ class LanguageBar extends React.Component {
     this.i18n = props.i18n;
   }
 
-  public static Flag = styled.div.attrs({
-    className: (props: any) =>
-      `flag-icon flag-icon-${
-        mapCountryCode(props.country)
-          ? mapCountryCode(props.country)
-          : props.country
-      }`
-  })`
+  public static Flag = styled.div.attrs((props: { [key: string]: string }) => ({
+    className: `flag-icon flag-icon-${
+      mapCountryCode(props.country)
+        ? mapCountryCode(props.country)
+        : props.country
+    }`
+  }))`
     font-size: 1.5rem;
     margin: 0 10px 0 0;
     cursor: pointer;
@@ -35,13 +34,15 @@ class LanguageBar extends React.Component {
 
     return (
       <div id="lang">
-        {languages.filter((l: string) => !l.includes('-')).map((l: string) => (
-          <LanguageBar.Flag
-            key={l}
-            country={l}
-            onClick={() => this.changeLang(l)}
-          />
-        ))}
+        {languages
+          .filter((l: string) => !l.includes('-'))
+          .map((l: string) => (
+            <LanguageBar.Flag
+              key={l}
+              country={l}
+              onClick={() => this.changeLang(l)}
+            />
+          ))}
       </div>
     );
   }
