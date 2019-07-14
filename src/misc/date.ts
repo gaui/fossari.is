@@ -11,14 +11,14 @@ import {
   subDays
 } from 'date-fns';
 
-function getNextWeekDay(date: Date, weekDay: number) {
+function getNextWeekDay(date: Date, weekDay: number): Date {
   const last = subDays(endOfISOWeek(date), 7 - weekDay);
   const next = isAfter(date, last) ? addWeeks(last, 1) : last;
 
   return next;
 }
 
-function getDifference(dateTo: Date, dateFrom: Date) {
+function getDifference(dateTo: Date, dateFrom: Date): CountdownTimeState {
   return {
     days: differenceInDays(dateFrom, dateTo).toLocaleString('de-GB'),
     hours: differenceInHours(dateFrom, dateTo).toLocaleString('de-GB'),
@@ -27,11 +27,11 @@ function getDifference(dateTo: Date, dateFrom: Date) {
   };
 }
 
-function isSameDay(dateFrom: Date, dateTo: Date) {
+function isSameDay(dateFrom: Date, dateTo: Date): boolean {
   return sameDay(dateFrom, dateTo);
 }
 
-function isFriday(date: Date) {
+function isFriday(date: Date): boolean {
   return friday(date);
 }
 

@@ -50,7 +50,7 @@ i18n
     }
   });
 
-function mapCountryCode(countryCode: string) {
+function mapCountryCode(countryCode: string): string {
   return flagCodeMap[countryCode];
 }
 

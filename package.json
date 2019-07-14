@@ -24,7 +24,7 @@
   "scripts": {
     "start": "parcel ./src/index.html --no-source-maps",
     "build": "parcel build ./src/index.html --public-url ./",
-    "lint": "tslint -p .",
+    "lint": "eslint --ext .ts src",
     "format": "prettier \"./{src,__tests__,examples}/**/*.{js,jsx,ts,tsx,json,md}\" --write",
     "typecheck": "tsc --noEmit --pretty --skipLibCheck",
     "docker:build": "sh -c 'docker build . -t $npm_package_docker_registry:$npm_package_version'",
@@ -51,13 +51,16 @@
     "@types/react": "^16.8.23",
     "@types/react-dom": "^16.8.4",
     "@types/styled-components": "^4.1.18",
+    "@typescript-eslint/eslint-plugin": "^1.12.0",
+    "@typescript-eslint/parser": "^1.12.0",
     "autoprefixer": "^9.6.1",
     "babel-plugin-styled-components": "^1.10.6",
+    "eslint": "^6.0.1",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
     "parcel-bundler": "^1.12.3",
     "postcss-preset-env": "^6.2.0",
     "prettier": "^1.18.2",
-    "tslint": "^5.11.0",
-    "tslint-config-prettier": "^1.15.0",
     "typescript": "^3.5.3"
   }
 }

@@ -1,7 +1,7 @@
 class StyledComponentsHelper {
-  private defaults: any;
+  private defaults: StyledComponentsHelperProps;
 
-  constructor(defaults: any) {
+  public constructor(defaults: StyledComponentsHelperProps) {
     this.defaults = defaults;
   }
 

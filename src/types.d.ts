@@ -26,6 +26,10 @@ interface CountdownTimeState {
   seconds: string;
 }
 
+interface StyledComponentsHelperProps {
+  [key: string]: unknown;
+}
+
 declare module '*.css';
 declare module 'nprogress';
 declare module 'styled-components';
