@@ -16,10 +16,10 @@ interface CountdownProps {
 
 interface CountdownState {
   loaded: boolean;
-  time: CountdownTimeState;
+  time?: DateDetail;
 }
 
-interface CountdownTimeState {
+interface CountdownTimerProps {
   days: string;
   hours: string;
   minutes: string;

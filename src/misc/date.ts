@@ -18,7 +18,7 @@ function getNextWeekDay(date: Date, weekDay: number): Date {
   return next;
 }
 
-function getDifference(dateTo: Date, dateFrom: Date): CountdownTimeState {
+function getDifference(dateTo: Date, dateFrom: Date): CountdownTimerProps {
   return {
     days: differenceInDays(dateFrom, dateTo).toLocaleString('de-GB'),
     hours: differenceInHours(dateFrom, dateTo).toLocaleString('de-GB'),
@@ -27,12 +27,9 @@ function getDifference(dateTo: Date, dateFrom: Date): CountdownTimeState {
   };
 }
 
-function isSameDay(dateFrom: Date, dateTo: Date): boolean {
-  return sameDay(dateFrom, dateTo);
-}
-
-function isFriday(date: Date): boolean {
-  return friday(date);
-}
-
-export { getNextWeekDay, getDifference, isFriday, isSameDay };
+export {
+  getNextWeekDay,
+  getDifference,
+  friday as isFriday,
+  sameDay as isSameDay
+};

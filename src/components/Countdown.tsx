@@ -1,70 +1,53 @@
-import React, { Fragment } from 'react';
-import { withTranslation } from 'react-i18next';
+import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import { getDifference } from '../misc/date';
 import AnimatedText from './AnimatedText';
 
-class Countdown extends React.Component<CountdownProps, CountdownState> {
-  state = {
-    loaded: false,
-    time: {
-      days: '',
-      hours: '',
-      minutes: '',
-      seconds: ''
-    }
-  } as CountdownState;
-  constructor(props: any) {
-    super(props);
-  }
+const Timer = (props: CountdownTimerProps) => {
+  const { t } = useTranslation();
 
-  public static Wrapper = styled(AnimatedText).attrs({
-    color: '#999'
-  })`
-    font-size: 0.2em;
-  `;
+  return (
+    <>
+      {Object.entries(props)
+        .map(([k, v]) => `${v} ${t(k)}`)
+        .join(', ')}
+    </>
+  );
+};
 
-  getDifference(): CountdownTimeState {
-    const { dateFrom, dateTo } = this.props;
+const Wrapper = styled(AnimatedText).attrs({
+  color: '#999'
+})`
+  font-size: 0.2em;
+`;
 
-    const diff = getDifference(dateFrom, dateTo);
+const Countdown = (props: CountdownProps) => {
+  const { dateFrom, dateTo } = props;
 
-    return diff;
-  }
+  const [state, setState] = useState<DateDetail>();
 
-  componentWillReceiveProps() {
-    const diff = this.getDifference();
-    this.setState({ loaded: diff.seconds !== '', time: diff });
-  }
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const diff = R.pick(
+        ['days', 'hours', 'minutes', 'seconds'],
+        getDifference(dateTo, dateFrom)
+      );
+      setState({ ...diff });
+    }, 1000);
 
-  public static Timer = (props: any) => {
-    const { t, time } = props;
+    return () => {
+      if (interval) {
+        clearInterval(interval);
+      }
+    };
+  }, [dateFrom, dateTo]);
 
-    return (
-      <>
-        {Object.keys(time).map((k, i, a) => (
-          <Fragment key={k}>
-            <span key={k}>
-              {time[k]} {t(k)}
-            </span>
-            {i !== a.length - 1 && <span> / </span>}
-          </Fragment>
-        ))}
-      </>
-    );
-  };
+  return (
+    <Wrapper animationname="fade">
+      <Timer {...state} />
+    </Wrapper>
+  );
+};
 
-  render() {
-    const { loaded, time } = this.state;
-
-    return (
-      loaded && (
-        <Countdown.Wrapper animationname="fade">
-          <Countdown.Timer time={time} {...this.props} />
-        </Countdown.Wrapper>
-      )
-    );
-  }
-}
-
-export default withTranslation()(Countdown);
+export default Countdown;
