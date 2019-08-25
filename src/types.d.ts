@@ -30,6 +30,10 @@ interface StyledComponentsHelperProps {
   [key: string]: unknown;
 }
 
+interface Window {
+  friday: boolean;
+}
+
 declare module '*.css';
 declare module 'nprogress';
 declare module 'styled-components';
