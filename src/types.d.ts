@@ -19,11 +19,15 @@ interface CountdownState {
   time?: DateDetail;
 }
 
-interface CountdownTimerProps {
-  days: string;
-  hours: string;
-  minutes: string;
-  seconds: string;
+interface DateDetail {
+  years?: number;
+  months?: number;
+  weeks?: number;
+  days?: number;
+  hours?: number;
+  minutes?: number;
+  seconds?: number;
+  milliseconds?: number;
 }
 
 interface StyledComponentsHelperProps {
