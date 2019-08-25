@@ -3,8 +3,9 @@ import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import { getDifference } from '../misc/date';
 import AnimatedText from './AnimatedText';
+import * as R from 'ramda';
 
-const Timer = (props: CountdownTimerProps) => {
+const Timer = (props: DateDetail) => {
   const { t } = useTranslation();
 
   return (
