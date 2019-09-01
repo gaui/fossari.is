@@ -5960,7 +5960,7 @@ reduce-css-calc@^2.0.0:
     css-unit-converter "^1.1.1"
     postcss-value-parser "^3.3.0"
 
-redux@^4.0.0, redux@^4.0.4:
+redux@^4.0.0, redux@^4.0.1, redux@^4.0.4:
   version "4.0.4"
   resolved "https://registry.yarnpkg.com/redux/-/redux-4.0.4.tgz#4ee1aeb164b63d6a1bcc57ae4aa0b6e6fa7a3796"
   integrity sha512-vKv4WdiJxOWKxK0yRoaK3Y4pxxB0ilzVx6dszU2W8wLxlb2yikRph4iV/ymtdJ6ZxpBLFbyrxklnT5yBbQSl3Q==
@@ -6060,6 +6060,13 @@ regjsparser@^0.6.0:
   integrity sha512-RQ7YyokLiQBomUJuUG8iGVvkgOLxwyZM8k6d3q5SAXpg4r5TZJZigKFvC6PpD+qQ98bCDC5YelPeA3EucDoNeQ==
   dependencies:
     jsesc "~0.5.0"
+
+reinspect@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/reinspect/-/reinspect-1.0.1.tgz#49948455fb1cafdf8878ca552c609e0bff746ff8"
+  integrity sha512-vzg/xHLgeHczBZhJ1K1xXOSD+vtQoJaH1K16sD32+V4hjaBYgQJb5up3oBYUDy+37OXTiyvM8O98PHthmSO1gA==
+  dependencies:
+    redux "^4.0.1"
 
 remove-trailing-separator@^1.0.1:
   version "1.1.0"

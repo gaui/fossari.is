@@ -1,4 +1,5 @@
-import React, { useEffect, useReducer } from 'react';
+import React, { useEffect } from 'react';
+import { useReducer } from 'reinspect';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import AnimatedText from './AnimatedText';
@@ -9,7 +10,14 @@ import countdownReducer, { initialState } from '../redux/reducers/countdown';
 const Countdown = (props: CountdownProps) => {
   const { dateFrom, dateTo, onTick } = props;
 
-  const [state, dispatch] = useReducer(countdownReducer, initialState);
+  const [state, dispatch] = useReducer(
+    countdownReducer,
+    initialState,
+    (initialState: DateDetail) => {
+      return initialState;
+    },
+    'countdownReducer'
+  );
 
   useEffect(() => {
     const interval = setInterval(() => {

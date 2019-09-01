@@ -3,7 +3,8 @@ import FacebookLike from './FacebookLike';
 import GitHub from './GitHub';
 import LanguageBar from './LanguageBar';
 import Version from './Version';
-import React, { useReducer, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { StateInspector, useReducer } from 'reinspect';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import AnimatedText from './AnimatedText';
@@ -12,20 +13,27 @@ import appReducer, { initialState } from '../redux/reducers/app';
 import packageJson from '../../package.json';
 
 const App = () => (
-  <GlobalWrapper>
-    <GlobalStyle />
-    <IsItFriday />
-    <LanguageBar />
-    <Version number={packageJson.version} />
-    <GitHub url="https://github.com/gaui/fossari.is" />
-    <FacebookLike url="https://fossari.is" />
-  </GlobalWrapper>
+  <StateInspector>
+    <GlobalWrapper>
+      <GlobalStyle />
+      <IsItFriday />
+      <LanguageBar />
+      <Version number={packageJson.version} />
+      <GitHub url="https://github.com/gaui/fossari.is" />
+      <FacebookLike url="https://fossari.is" />
+    </GlobalWrapper>
+  </StateInspector>
 );
 
 const IsItFriday = () => {
   const { t } = useTranslation();
 
-  const [state, dispatch] = useReducer(appReducer, initialState);
+  const [state, dispatch] = useReducer(
+    appReducer,
+    initialState,
+    (initialState: AppState) => initialState,
+    'appReducer'
+  );
 
   useEffect(() => {
     dispatch({ type: 'SET_DATES', payload: { currentDate: new Date() } });

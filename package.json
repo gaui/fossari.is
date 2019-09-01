@@ -23,6 +23,7 @@
     "react-i18next": "^10.11.4",
     "react-redux": "^7.1.1",
     "redux": "^4.0.4",
+    "reinspect": "^1.0.1",
     "styled-components": "^4.3.2"
   },
   "scripts": {
