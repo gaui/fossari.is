@@ -1,6 +1,6 @@
 {
   "name": "fossari.is",
-  "version": "4.1.4",
+  "version": "4.2.0",
   "description": "",
   "main": "./dist/index.js",
   "author": "Gudjon Jonsson",
