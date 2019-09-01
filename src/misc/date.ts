@@ -1,20 +1,19 @@
 import {
   isAfter,
-  isFriday as friday,
   isSameDay as sameDay,
   addWeeks,
   endOfISOWeek,
   subDays
 } from 'date-fns';
 
-function getNextWeekDay(date: Date, weekDay: number): Date {
+const getNextWeekDay = (date: Date, weekDay: number): Date => {
   const last = subDays(endOfISOWeek(date), 7 - weekDay);
   const next = isAfter(date, last) ? addWeeks(last, 1) : last;
 
   return next;
-}
+};
 
-function getDifference(targetDate: Date, sourceDate: Date): DateDetail {
+const getDifference = (sourceDate: Date, targetDate: Date): DateDetail => {
   const r: DateDetail = {} as DateDetail;
   const s: DateDetail = {
     years: 31536000,
@@ -39,11 +38,6 @@ function getDifference(targetDate: Date, sourceDate: Date): DateDetail {
   });
 
   return r;
-}
-
-export {
-  getNextWeekDay,
-  getDifference,
-  friday as isFriday,
-  sameDay as isSameDay
 };
+
+export { getNextWeekDay, getDifference };

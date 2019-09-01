@@ -1,17 +1,21 @@
 interface AppState {
-  nextFriday: Date;
-}
-
-interface IsItFridayState {
   loaded: boolean;
   isFriday: boolean;
-  currentDate: Date;
-  nextFriday: Date;
+  currentDate?: Date;
+  nextFriday?: Date;
+  display: {
+    text: string;
+    animationname: string;
+    color: string;
+    size: string;
+    iterationcount: string;
+  };
 }
 
 interface CountdownProps {
   dateFrom: Date;
   dateTo: Date;
+  onTick?: (diff: DateDetail) => void;
 }
 
 interface CountdownState {
@@ -36,6 +40,7 @@ interface StyledComponentsHelperProps {
 
 interface Window {
   friday: boolean;
+  __REDUX_DEVTOOLS_EXTENSION__: any;
 }
 
 declare module '*.css';

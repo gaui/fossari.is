@@ -1,9 +1,40 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useReducer } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
-import { getDifference } from '../misc/date';
 import AnimatedText from './AnimatedText';
-import * as R from 'ramda';
+import { pick } from 'ramda';
+import { getDifference } from '../misc/date';
+import countdownReducer, { initialState } from '../redux/reducers/countdown';
+
+const Countdown = (props: CountdownProps) => {
+  const { dateFrom, dateTo, onTick } = props;
+
+  const [state, dispatch] = useReducer(countdownReducer, initialState);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const diff = pick(
+        ['days', 'hours', 'minutes', 'seconds'],
+        getDifference(dateFrom, dateTo)
+      );
+
+      dispatch({ type: 'NEXT_TICK', payload: { ...diff } });
+      onTick && onTick(diff);
+    }, 1000);
+
+    return () => {
+      if (interval) {
+        clearInterval(interval);
+      }
+    };
+  }, [dateFrom, dateTo]);
+
+  return (
+    <Wrapper animationname="fade">
+      <Timer {...state} />
+    </Wrapper>
+  );
+};
 
 const Timer = (props: DateDetail) => {
   const { t } = useTranslation();
@@ -22,33 +53,5 @@ const Wrapper = styled(AnimatedText).attrs({
 })`
   font-size: 0.2em;
 `;
-
-const Countdown = (props: CountdownProps) => {
-  const { dateFrom, dateTo } = props;
-
-  const [state, setState] = useState<DateDetail>();
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const diff = R.pick(
-        ['days', 'hours', 'minutes', 'seconds'],
-        getDifference(dateTo, dateFrom)
-      );
-      setState({ ...diff });
-    }, 1000);
-
-    return () => {
-      if (interval) {
-        clearInterval(interval);
-      }
-    };
-  }, [dateFrom, dateTo]);
-
-  return (
-    <Wrapper animationname="fade">
-      <Timer {...state} />
-    </Wrapper>
-  );
-};
 
 export default Countdown;
