@@ -4,6 +4,8 @@ A simple React application that tells if it's Friday
 
 ## Stack
 
+- React
+- Redux
 - TypeScript 3
 - Styled Components 4
 - Parcel
