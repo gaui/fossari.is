@@ -37,7 +37,7 @@
     "docker:push": "sh -c 'docker push $npm_package_docker_registry:$npm_package_version'"
   },
   "engines": {
-    "node": "^12.4.0"
+    "node": "^12.9.1"
   },
   "repository": {
     "type": "git",
