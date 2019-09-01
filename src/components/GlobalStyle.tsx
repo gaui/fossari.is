@@ -14,28 +14,6 @@ body,
   box-sizing:border-box;
 }
 
-#Wrapper {
-  height: 100%;
-  padding: 10px;
-  box-sizing: border-box;
-
-  display: grid;
-  grid-auto-columns: 20% 60% 20%;
-  grid-auto-rows: auto auto auto;
-  grid-template-areas:
-    'lang app version'
-    '. app .'
-    'fb app github';
-   
-}
-
-#IsItFriday {
-  grid-area: app;
-  justify-self: center;
-  align-self: center;
-  font-size: 20vh;
-}
-
 #lang {
   grid-area: lang;
   justify-self: left;

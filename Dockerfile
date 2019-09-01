@@ -1,4 +1,4 @@
-ARG NODE_VERSION=12.4
+ARG NODE_VERSION=12.9
 FROM node:${NODE_VERSION}-slim AS build
 
 COPY . /tmp
