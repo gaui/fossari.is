@@ -15,7 +15,7 @@
     "flag-icon-css": "^3.3.0",
     "font-awesome": "^4.7.0",
     "i18next": "^17.0.6",
-    "i18next-browser-languagedetector": "^3.0.1",
+    "i18next-browser-languagedetector": "^4.0.0",
     "nprogress": "^0.2.0",
     "ramda": "^0.26.1",
     "react": "16.10.2",
