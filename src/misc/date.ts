@@ -3,14 +3,15 @@ import {
   isSameDay as sameDay,
   addWeeks,
   endOfISOWeek,
-  subDays
+  subDays,
+  startOfDay
 } from 'date-fns';
 
 const getNextWeekDay = (date: Date, weekDay: number): Date => {
   const last = subDays(endOfISOWeek(date), 7 - weekDay);
   const next = isAfter(date, last) ? addWeeks(last, 1) : last;
 
-  return next;
+  return startOfDay(next);
 };
 
 const getDifference = (sourceDate: Date, targetDate: Date): DateDetail => {
