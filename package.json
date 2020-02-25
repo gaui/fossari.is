@@ -29,6 +29,7 @@
   "scripts": {
     "start": "parcel ./src/index.html --no-source-maps",
     "build": "parcel build ./src/index.html --public-url ./",
+    "test": "jest -i",
     "lint": "eslint --ext .ts src",
     "format": "prettier \"./{src,__tests__,examples}/**/*.{js,jsx,ts,tsx,json,md}\" --write",
     "typecheck": "tsc --noEmit --pretty --skipLibCheck",
