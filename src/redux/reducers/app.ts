@@ -1,6 +1,7 @@
 import NProgress from 'nprogress';
 import { getNextWeekDay } from '../../misc/date';
 import isFriday from 'date-fns/fp/isFriday';
+import isSameDay from 'date-fns/fp/isSameDay';
 
 export const initialState: AppState = {
   loaded: false,
@@ -35,23 +36,30 @@ const AppReducer = (
       const currentDate = action.payload.currentDate || new Date();
       const nextFriday = getNextWeekDay(currentDate, 5);
       const isItFriday = isFriday(currentDate) && window.friday !== false;
-      const display = isItFriday
-        ? {
-            text: 'friday',
-            animationname: 'tada',
-            color: 'green',
-            size: '1m',
-            iterationcount: 'infinite',
-          }
-        : initialState.display;
+      const displayFriday = {
+        text: 'friday',
+        animationname: 'tada',
+        color: 'green',
+        size: '1m',
+        iterationcount: 'infinite',
+      };
+      const display = isItFriday ? displayFriday : initialState.display;
 
-      return {
+      const newState = {
         ...state,
         currentDate,
         nextFriday,
         isFriday: isItFriday,
         display,
       };
+
+      // Svenni graduation feature flag
+      if (isSameDay(currentDate, new Date(2020, 5, 20))) {
+        newState.isFriday = true;
+        newState.display = { ...displayFriday, text: 'graduation' };
+      }
+
+      return newState;
     default:
       throw new Error();
   }
