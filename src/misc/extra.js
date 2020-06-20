@@ -1,4 +1,4 @@
-(function(d, s, id) {
+(function (d, s, id) {
   var js,
     fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -8,11 +8,11 @@
   fjs.parentNode.insertBefore(js, fjs);
 })(document, 'script', 'facebook-jssdk');
 
-(function(i, s, o, g, r, a, m) {
+(function (i, s, o, g, r, a, m) {
   i['GoogleAnalyticsObject'] = r;
   (i[r] =
     i[r] ||
-    function() {
+    function () {
       (i[r].q = i[r].q || []).push(arguments);
     }),
     (i[r].l = 1 * new Date());

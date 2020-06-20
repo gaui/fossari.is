@@ -17,7 +17,7 @@ class LanguageBar extends React.Component {
       mapCountryCode(props.country)
         ? mapCountryCode(props.country)
         : props.country
-    }`
+    }`,
   }))`
     font-size: 1.5rem;
     margin: 0 10px 0 0;

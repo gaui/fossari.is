@@ -11,12 +11,12 @@ const propHelper = new StyledComponentsHelper({
   iterationcount: 1,
   direction: 'normal',
   fillmode: 'both',
-  playstate: 'running'
+  playstate: 'running',
 });
 
 const AnimatedText = styled.div.attrs(
   (props: { [key: string]: string }): StyledComponentsHelperProps => ({
-    ...propHelper.getPropObject(props)
+    ...propHelper.getPropObject(props),
   })
 )`
   color: ${(props: any) => props.color};

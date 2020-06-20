@@ -57,7 +57,7 @@ const Timer = (props: DateDetail) => {
 };
 
 const Wrapper = styled(AnimatedText).attrs({
-  color: '#999'
+  color: '#999',
 })`
   font-size: 0.2em;
 `;

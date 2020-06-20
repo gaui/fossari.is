@@ -11,8 +11,8 @@ export const initialState: AppState = {
     animationname: 'swoosh',
     color: 'red',
     size: '2em',
-    iterationcount: '1'
-  }
+    iterationcount: '1',
+  },
 };
 
 const AppReducer = (
@@ -29,7 +29,7 @@ const AppReducer = (
 
       return {
         ...state,
-        loaded: action.payload.loaded
+        loaded: action.payload.loaded,
       };
     case 'SET_DATES':
       const currentDate = action.payload.currentDate || new Date();
@@ -41,7 +41,7 @@ const AppReducer = (
             animationname: 'tada',
             color: 'green',
             size: '1m',
-            iterationcount: 'infinite'
+            iterationcount: 'infinite',
           }
         : initialState.display;
 
@@ -50,7 +50,7 @@ const AppReducer = (
         currentDate,
         nextFriday,
         isFriday: isItFriday,
-        display
+        display,
       };
     default:
       throw new Error();

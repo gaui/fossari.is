@@ -9,7 +9,7 @@ describe('Date util tests', () => {
     milliseconds: 0,
     months: 0,
     weeks: 0,
-    years: 0
+    years: 0,
   };
 
   it.each([
@@ -21,8 +21,8 @@ describe('Date util tests', () => {
         hours: 21,
         minutes: 45,
         seconds: 0,
-        ...dateDetailDefault
-      } as DateDetail
+        ...dateDetailDefault,
+      } as DateDetail,
     ],
     [
       new Date(2020, 1, 25, 2, 38, 35),
@@ -32,9 +32,9 @@ describe('Date util tests', () => {
         hours: 21,
         minutes: 21,
         seconds: 25,
-        ...dateDetailDefault
-      } as DateDetail
-    ]
+        ...dateDetailDefault,
+      } as DateDetail,
+    ],
   ])(
     'should return appropriate time duration between dates',
     (dateFrom: Date, dateTo: Date, expectedDiff: DateDetail) => {

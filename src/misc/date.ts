@@ -4,7 +4,7 @@ import {
   addWeeks,
   endOfISOWeek,
   subDays,
-  startOfDay
+  startOfDay,
 } from 'date-fns';
 
 const getNextWeekDay = (date: Date, weekDay: number): Date => {
@@ -24,7 +24,7 @@ const getDifference = (sourceDate: Date, targetDate: Date): DateDetail => {
     hours: 3600,
     minutes: 60,
     seconds: 1,
-    milliseconds: 1
+    milliseconds: 1,
   };
 
   const calc = (key: string) =>

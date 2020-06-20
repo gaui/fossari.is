@@ -3,7 +3,7 @@ import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
 const flagCodeMap = {
-  en: 'us'
+  en: 'us',
 };
 
 const resources = {
@@ -17,8 +17,8 @@ const resources = {
       its: 'það er',
       isit: 'er',
       friday: 'fössari',
-      no: 'nei'
-    }
+      no: 'nei',
+    },
   },
   en: {
     translation: {
@@ -30,9 +30,9 @@ const resources = {
       its: 'it is',
       isit: 'is it',
       friday: 'Friday',
-      no: 'no'
-    }
-  }
+      no: 'no',
+    },
+  },
 };
 
 i18n
@@ -46,8 +46,8 @@ i18n
       useSuspense: false,
       bindI18n: 'languageChanged loaded',
       bindStore: 'added removed',
-      nsMode: 'default'
-    }
+      nsMode: 'default',
+    },
   });
 
 function mapCountryCode(countryCode: string): string {
