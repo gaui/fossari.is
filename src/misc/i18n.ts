@@ -19,6 +19,7 @@ const resources = {
       friday: 'fössari',
       graduation: 'útskrift',
       no: 'nei',
+      ad: 'Vilt þú auglýsa hér?',
     },
   },
   en: {
@@ -33,6 +34,7 @@ const resources = {
       friday: 'Friday',
       graduation: 'graduation',
       no: 'no',
+      ad: 'Do you want to advertise here?',
     },
   },
 };

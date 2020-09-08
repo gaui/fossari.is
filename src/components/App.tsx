@@ -11,16 +11,19 @@ import AnimatedText from './AnimatedText';
 import Countdown from './Countdown';
 import appReducer, { initialState } from '../redux/reducers/app';
 import packageJson from '../../package.json';
+import Ad from './Ad';
 
 const App = () => (
   <StateInspector>
     <GlobalWrapper>
       <GlobalStyle />
+      <Ad space="1" />
       <IsItFriday />
       <LanguageBar />
       <Version number={packageJson.version} />
       <GitHub url="https://github.com/gaui/fossari.is" />
       <FacebookLike url="https://fossari.is" />
+      <Ad space="2" />
     </GlobalWrapper>
   </StateInspector>
 );
@@ -85,7 +88,7 @@ const GlobalWrapper = styled.div`
   grid-auto-rows: auto auto auto;
   grid-template-areas:
     'lang app version'
-    '. app .'
+    'ad1 app ad2'
     'fb app github';
 `;
 
