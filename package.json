@@ -62,7 +62,7 @@
     "@types/styled-components": "5.1.3",
     "@typescript-eslint/eslint-plugin": "3.10.1",
     "@typescript-eslint/parser": "3.10.1",
-    "autoprefixer": "9.8.6",
+    "autoprefixer": "10.0.1",
     "babel-plugin-styled-components": "1.11.1",
     "eslint": "7.8.1",
     "eslint-config-prettier": "6.11.0",
